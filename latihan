@@ -1,0 +1,54 @@
+#Soal 2#
+Data = {"Nama" : "Jhonny",
+        "Prodi" : "Kedokteran",
+        "Alamat" : {"Desa":"Wakanda",
+                    "Kecamatan":"DC",
+                    "Kabupaten":"df",
+                    "Provinsi":"asfgs"
+                    }
+        }
+        
+print(Data)
+print()
+print()
+
+#Soal 3#
+penilaian = {"materi 1" : 80,
+             "materi 2" : 87,
+             "materi 3" : [66, 75, 65],
+             "materi 4" : {"diskusi" : 90,
+                           "kuis":70
+                          }
+             }
+             
+import statistics
+def nilai(penilaian):
+    nilai1= 0.2*penilaian["materi 1"]
+    nilai2= 0.2*penilaian["materi 2"]
+    nilai3= 0.3*statistics.mean(penilaian["materi 3"])
+    nilai4= 0.3*(penilaian["materi 4"]["diskusi"]+penilaian["materi 4"]["kuis"])/len(penilaian["materi 4"])
+
+    return nilai1 + nilai2 + nilai3 + nilai4
+
+print("nilai", nilai(penilaian))
+print()
+print()
+#Soal papan#
+Data = {"Nama" : "Adi",
+		 "Umur" : 20,
+		 "MK" : {"Matematika Diskrit" : ['A', 2],
+				 "Pemrograman" : ['B', 3],
+				 "Struktur Data" : ['B', 2],
+				 }
+		}
+
+matakuliah = []
+for mk in Data["MK"].keys():
+    matakuliah.append(mk)
+    
+ipk = (Data["MK"]["Matematika Diskrit"][1]*4+Data["MK"]["Pemrograman"][1]*3+Data["MK"]["Struktur Data"][1]*3) \
+ / (Data["MK"]["Matematika Diskrit"][1]+Data["MK"]["Pemrograman"][1]+Data["MK"]["Struktur Data"][1])
+
+print(",".join(matakuliah))
+print(Data["MK"])
+print(ipk)
