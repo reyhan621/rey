@@ -1,0 +1,26 @@
+tumpukkan =[]
+
+def push(dataBaru):
+    tumpukkan.append(dataBaru)
+    
+def pop():
+    tumpukkan.pop()
+    
+def isEmpty():
+    #jika tumpukkan kosong maka True
+    #jika tumpukkan ada isinya maka False
+    if len(tumpukkan) == 0 :
+        return True
+    else:
+        return False
+    
+#tampilkan isi dari list/tumpukkan
+def printTumpukkan():
+    print(tumpukkan)
+    
+push(3)
+push(0)
+push(2)
+pop()
+print(tumpukkan)
+    
